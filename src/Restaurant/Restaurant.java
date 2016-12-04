@@ -15,6 +15,13 @@ public class Restaurant extends Application {
         launch(args);
     }
 
+    //// TODO: 05.12.2016
+    ////
+    //// - finish restaurant
+    //// - finish orders
+    //// - rethink map
+    //// - rethink manager
+    //// - finish managers
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("RestaurantView.fxml"));
