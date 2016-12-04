@@ -12,4 +12,14 @@ public class PotentialClient extends IndividualClient {
     public RegularClient TransformToRegularClient() {
         return null;
     }
+
+    @Override
+    public void DrawOnMap() {
+
+    }
+
+    @Override
+    public void AddMapDescription() {
+
+    }
 }

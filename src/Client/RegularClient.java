@@ -8,14 +8,24 @@ public class RegularClient extends IndividualClient {
     private float discount;
 
     public void ResetLoyaltyPoints() {
-        ;
+
     }
 
     public void RegisterPurchase() {
-        ;
+
     }
 
     public float GetDiscountValue() {
         return 0f;
+    }
+
+    @Override
+    public void DrawOnMap() {
+
+    }
+
+    @Override
+    public void AddMapDescription() {
+
     }
 }
