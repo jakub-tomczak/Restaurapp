@@ -1,8 +1,9 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<GridPane xmlns:fx="http://javafx.com/fxml"
-          fx:controller="Restaurant.RestaurantController" alignment="center" hgap="10" vgap="10">
+
+<?import javafx.scene.layout.GridPane?>
+<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" prefHeight="193.0" prefWidth="415.0"
+          xmlns="http://javafx.com/javafx/8.0.112-ea" fx:controller="Restaurant.RestaurantController">
+
+
 </GridPane>

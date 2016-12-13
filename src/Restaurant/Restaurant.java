@@ -25,8 +25,11 @@ public class Restaurant extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("RestaurantView.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Restaurapp");
         primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setMaximized(true);
+        primaryStage.setFullScreen(true);
+        primaryStage.setFullScreenExitHint("");
         primaryStage.show();
 
     }
