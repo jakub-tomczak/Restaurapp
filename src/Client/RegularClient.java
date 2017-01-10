@@ -1,9 +1,11 @@
 package Client;
 
+import Map.Localizable;
+
 /**
  * Created by Jakub on 04.12.2016.
  */
-public class RegularClient extends IndividualClient {
+public class RegularClient extends IndividualClient implements Localizable {
     private int loyaltyPoints;
     private float discount;
 

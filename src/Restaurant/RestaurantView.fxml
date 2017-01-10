@@ -1,9 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER_LEFT" centerShape="false" maxHeight="-Infinity"
+          maxWidth="-Infinity"
+          minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+          xmlns="http://javafx.com/javafx/8.0.112-ea"
+          fx:controller="Restaurant.RestaurantController">
+    <columnConstraints>
+        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="205.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="467.0" minWidth="10.0" prefWidth="395.0"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="110.0" valignment="CENTER" vgrow="ALWAYS"/>
+        <RowConstraints minHeight="10.0" prefHeight="110.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="202.0" minHeight="10.0" prefHeight="181.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="100.0" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+    </rowConstraints>
+    <children>
+        <Accordion GridPane.halignment="LEFT" GridPane.rowSpan="3" GridPane.valignment="CENTER">
+            <panes>
+                <TitledPane animated="false" text="Klienci">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ListView layoutX="19.6" layoutY="19.6" prefHeight="269.0" prefWidth="184.0"
+                                          AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="10.0"
+                                          AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="10.0"/>
+                                <Button fx:id="klientManagerButton" layoutX="43.0" layoutY="287.0"
+                                        mnemonicParsing="false" onAction="#openClientManager"
+                                        text="Zarządzaj klientami"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+                <TitledPane animated="false" text="Dostawcy">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ListView prefHeight="273.0" prefWidth="200.0"/>
+                                <Button layoutX="35.0" layoutY="287.0" mnemonicParsing="false"
+                                        text="Zarządzaj dostawcami"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+            </panes>
+        </Accordion>
+        <Label text="Informacje:" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.hgrow="NEVER"
+               GridPane.rowIndex="3">
+            <GridPane.margin>
+                <Insets left="5.0"/>
+            </GridPane.margin>
+        </Label>
+        <Canvas height="200.0" width="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+                GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.rowSpan="2" GridPane.valignment="CENTER"
+                GridPane.vgrow="ALWAYS"/>
+        <ListView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1"/>
 
-<?import javafx.scene.layout.GridPane?>
-<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" prefHeight="193.0" prefWidth="415.0"
-          xmlns="http://javafx.com/javafx/8.0.112-ea" fx:controller="Restaurant.RestaurantController">
-
-
+    </children>
 </GridPane>

@@ -7,6 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class Restaurant extends Application {
 
     public static Map map = Map.getInstance();
@@ -24,12 +26,19 @@ public class Restaurant extends Application {
     //// - finish managers
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("RestaurantView.fxml"));
+        RestaurantController controller = new RestaurantController();
+
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("RestaurantView.fxml"));
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
         primaryStage.setTitle("Restaurapp");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 500, 500));
         primaryStage.setMaximized(true);
-        primaryStage.setFullScreen(true);
-        primaryStage.setFullScreenExitHint("");
+        //  primaryStage.setFullScreen(true);
+        primaryStage.setFullScreenExitHint("Wciśnij ESC, aby wyjść z trybu pełnoekranowego.");
         primaryStage.show();
 
     }

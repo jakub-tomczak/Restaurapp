@@ -8,6 +8,8 @@ public interface Localizable {
     //display it on a map to recognize object that has been drawn
     String typeOfObject = new String();
     String objectDescription = new String();
+    int positionX = 0;
+    int positionY = 0;
 
     void DrawOnMap();
 
