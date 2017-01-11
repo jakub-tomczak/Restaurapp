@@ -1,16 +1,20 @@
 package Restaurant;
 
+import javafx.stage.Stage;
+
 /**
  * Created by Jakub on 11.01.2017.
  */
-public class ViewsManager {
+public class ViewsDescription {
     private String windowTitle;
     private String viewPath;
+    private Stage referenceToWindow;
 
-    private ViewsManager() {
+    private ViewsDescription() {
+        referenceToWindow = null;
     }
 
-    public ViewsManager(String windowTitle, String viewPath) {
+    public ViewsDescription(String windowTitle, String viewPath) {
         this.windowTitle = windowTitle;
         this.viewPath = viewPath;
     }
@@ -29,5 +33,13 @@ public class ViewsManager {
 
     public void setViewPath(String viewPath) {
         this.viewPath = viewPath;
+    }
+
+    public Stage getReferenceToWindow() {
+        return referenceToWindow;
+    }
+
+    public void setReferenceToWindow(Stage referenceToWindow) {
+        this.referenceToWindow = referenceToWindow;
     }
 }

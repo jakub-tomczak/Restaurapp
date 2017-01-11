@@ -1,8 +1,6 @@
 package ControlManager;
 
 import Order.Order;
-import javafx.fxml.FXML;
-import javafx.scene.control.TabPane;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,11 +11,8 @@ import java.util.List;
 public class OrdersManager extends Manager {
     private static OrdersManager ordersManagerInstance = null;
     List<Order> currentOrders = new ArrayList<Order>();
-    @FXML
-    TabPane tabPane;
 
     private OrdersManager() {
-        tabPane.getSelectionModel().select(2);
     }
 
     public static OrdersManager getOrdersManager() {
