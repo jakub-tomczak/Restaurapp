@@ -13,7 +13,11 @@ public class Meal {
     private float discountInGroup;
     private float timeOfCooking; //in seconds
 
-    private enum MealCategory {
+    public float getMealPrice() {
+        return pricePerUnit * unit;
+    }
+
+    public enum MealCategory {
         Soup,
         Beverage,
         MainMeal,

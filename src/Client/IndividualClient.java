@@ -33,4 +33,9 @@ public abstract class IndividualClient extends Client {
     public static boolean VerifyPhoneNumber(String phoneNumberToVerify) {
         return false;
     }
+
+    @Override
+    public String toString() {
+        return firstName + " " + lastName;
+    }
 }

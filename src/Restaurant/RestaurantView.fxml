@@ -5,10 +5,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER_LEFT" centerShape="false" maxHeight="-Infinity"
-          maxWidth="-Infinity"
-          minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
-          xmlns="http://javafx.com/javafx/8.0.112-ea"
-          fx:controller="Restaurant.RestaurantController">
+          maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+          xmlns="http://javafx.com/javafx/8.0.112-ea" fx:controller="Restaurant.RestaurantController">
     <columnConstraints>
         <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="205.0"/>
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="467.0" minWidth="10.0" prefWidth="395.0"/>
@@ -24,16 +22,17 @@
             <panes>
                 <TitledPane animated="false" text="Klienci">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                            <children>
-                                <ListView layoutX="19.6" layoutY="19.6" prefHeight="269.0" prefWidth="184.0"
-                                          AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="10.0"
-                                          AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="10.0"/>
-                                <Button fx:id="klientManagerButton" layoutX="43.0" layoutY="287.0"
-                                        mnemonicParsing="false" onAction="#openClientManager"
-                                        text="Zarządzaj klientami"/>
-                            </children>
-                        </AnchorPane>
+                        <SplitPane dividerPositions="0.5" orientation="VERTICAL" minHeight="0.0" minWidth="0.0"
+                                   prefHeight="180.0" prefWidth="200.0">
+
+                            <ListView layoutX="19.6" layoutY="19.6" prefHeight="269.0" prefWidth="184.0"
+                                      AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="10.0"
+                                      AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="10.0"/>
+                            <Button fx:id="klientManagerButton" mnemonicParsing="false" onAction="#openClientManager"
+                                    text="Zarządzaj klientami"/>
+
+                        </SplitPane>
+
                     </content>
                 </TitledPane>
                 <TitledPane animated="false" text="Dostawcy">
@@ -59,6 +58,7 @@
                 GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.rowSpan="2" GridPane.valignment="CENTER"
                 GridPane.vgrow="ALWAYS"/>
         <ListView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1"/>
+
 
     </children>
 </GridPane>

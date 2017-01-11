@@ -28,19 +28,19 @@ public class Restaurant extends Application {
     public void start(Stage primaryStage) throws Exception {
         RestaurantController controller = new RestaurantController();
 
+
         Parent root = null;
         try {
             root = FXMLLoader.load(getClass().getResource("RestaurantView.fxml"));
         } catch (IOException exception) {
-            exception.printStackTrace();
+            System.out.println("Nie znaleziono pliku fxml restautacji");
         }
         primaryStage.setTitle("Restaurapp");
         primaryStage.setScene(new Scene(root, 500, 500));
-        primaryStage.setMaximized(true);
+        primaryStage.setMaximized(false);
         //  primaryStage.setFullScreen(true);
         primaryStage.setFullScreenExitHint("Wciśnij ESC, aby wyjść z trybu pełnoekranowego.");
         primaryStage.show();
 
     }
-
 }

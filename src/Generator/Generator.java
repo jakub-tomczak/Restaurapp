@@ -1,8 +1,10 @@
 package Generator;
 
 import Client.Address;
+import Order.Meal;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -16,7 +18,6 @@ public class Generator {
             "Andrzej",
             "Krzysztof"
     );
-
     private List<Address> addresses = Arrays.asList(
             new Address(
                     "62-030",
@@ -29,7 +30,7 @@ public class Generator {
                     "33b"
             )
     );
-
+    private HashMap<Meal.MealCategory, String> meals = new HashMap<Meal.MealCategory, String>();
 
     private Generator() {
     }

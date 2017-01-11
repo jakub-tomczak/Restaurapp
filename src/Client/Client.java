@@ -11,5 +11,8 @@ public abstract class Client implements Serializable {
     protected Address address;
     protected Map map = Map.getInstance();
 
-
+    @Override
+    public String toString() {
+        return "Klient";
+    }
 }
