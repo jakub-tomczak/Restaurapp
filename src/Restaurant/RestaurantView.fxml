@@ -22,7 +22,7 @@
             <panes>
                 <TitledPane animated="false" text="Klienci">
                     <content>
-                        <SplitPane dividerPositions="0.5" orientation="VERTICAL" minHeight="0.0" minWidth="0.0"
+                        <SplitPane dividerPositions="0.5" minHeight="0.0" minWidth="0.0" orientation="VERTICAL"
                                    prefHeight="180.0" prefWidth="200.0">
 
                             <ListView layoutX="19.6" layoutY="19.6" prefHeight="269.0" prefWidth="184.0"
@@ -58,6 +58,8 @@
                 GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.rowSpan="2" GridPane.valignment="CENTER"
                 GridPane.vgrow="ALWAYS"/>
         <ListView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1"/>
+        <Button fx:id="buttonDebug" mnemonicParsing="false" text="Button" GridPane.columnIndex="1"
+                GridPane.rowIndex="1"/>
 
 
     </children>
