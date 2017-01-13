@@ -14,9 +14,9 @@ public class RestaurantController {
 
     private HashMap<availableViews, ViewsDescription> viewsMap = new HashMap<availableViews, ViewsDescription>(10) {{
         put(availableViews.Restaurant, new ViewsDescription("Restauracja", "../Restaurant/RestaurantView.fxml"));
-        put(availableViews.ClientsManager, new ViewsDescription("Zarządzaj klientami", "../ControlManager/ClientManagerView.fxml"));
-        put(availableViews.DeliveryManManager, new ViewsDescription("Zarządzaj dostawcami", "../ControlManager/DeliveryMenManagerView.fxml"));
-        put(availableViews.OrdersManager, new ViewsDescription("Zarządzaj posiłkami", "../ControlManager/OrderManager.fxml"));
+        put(availableViews.ClientsManager, new ViewsDescription("Zarządzaj klientami", "../ControlManager/Views/ClientManagerView.fxml"));
+        put(availableViews.DeliveryManManager, new ViewsDescription("Zarządzaj dostawcami", "../ControlManager/Views/DeliveryMenManagerView.fxml"));
+        put(availableViews.OrdersManager, new ViewsDescription("Zarządzaj posiłkami", "../ControlManager/Views/OrderManager.fxml"));
     }};
 
     public void closeApplication(ActionEvent actionEvent) {
@@ -33,7 +33,23 @@ public class RestaurantController {
     }
 
     public void openOrdersManager(ActionEvent event) {
-        openWindow(availableViews.OrdersManager);
+        //openWindow(availableViews.OrdersManager);
+        openWindownVerbose(availableViews.ClientsManager);
+    }
+
+    public void openWindownVerbose(availableViews newView) {
+        Stage minorStage = new Stage();
+        Parent root = null;
+        ViewsDescription newViewProperties = viewsMap.get(newView);
+        try {
+            //root = FXMLLoader.load(getClass().getResource(newViewProperties.getViewPath()));
+            root = FXMLLoader.load(getClass().getResource("../ControlManager/Views/ClientManagerView.fxml"));
+        } catch (IOException exception) {
+            System.out.println("Problem z odnalezieniem widoku");
+        }
+        minorStage.setTitle(newViewProperties.getWindowTitle());
+        minorStage.setScene(new Scene(root, 500, 500));
+        minorStage.show();
     }
 
     /**

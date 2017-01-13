@@ -1,4 +1,4 @@
-package ControlManager;
+package ControlManager.Controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TabPane;

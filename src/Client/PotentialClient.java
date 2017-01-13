@@ -7,6 +7,10 @@ import Map.Localizable;
  */
 public class PotentialClient extends IndividualClient implements Localizable {
     //ask a potential Client whether is not eager for registration
+    public PotentialClient(String firstName, String lastName) {
+        super(firstName, lastName);
+    }
+
     public boolean ProposeLoyaltyCard() {
         return false;
     }
