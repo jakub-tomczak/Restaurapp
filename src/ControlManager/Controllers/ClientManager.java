@@ -62,8 +62,10 @@ public class ClientManager {
         TableColumn firstNameTableColumn = new TableColumn("Imię");
         firstNameTableColumn.setMinWidth(100);
         firstNameTableColumn.setCellValueFactory(
-                new PropertyValueFactory<Client, String>("firstName")
+                new PropertyValueFactory<Client, String>("firstNameString")
         );
+
+
         clientsTable.setItems(currentClients);
         clientsTable.getColumns().addAll(firstNameTableColumn);
 
