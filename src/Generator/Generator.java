@@ -169,19 +169,6 @@ public class Generator {
         return (String) lastNames.get((int) (Math.random() * 10 * lastNames.size() % lastNames.size()));
     }
 
-    //used to generate phone number and REGON
-    private String generate9DigitNumber() {
-        Integer randomNumber = 0;
-        int coef = 1;
-        do {
-            int propose = coef * ((int) (Math.random() * 9));
-            randomNumber += propose;
-            coef *= 10;
-        } while (randomNumber < 10000000);
-        randomNumber += coef * ((int) (Math.random() * 8) + 1);  //avoid 0 as first digit
-
-        return randomNumber.toString();
-    }
 
     private String generateEmail(String firstName, String lastName) {
         return firstName + "." + lastName + "@pudelek.pl";
@@ -191,10 +178,10 @@ public class Generator {
         return generateFirstName();
     }
 
-    private String generateBankAccountNumber() {
+    private String generateNumber(int digits) {
         String accountNumber = "";
-
-        for (int i = 0; i < 28; i++) {
+        accountNumber += (int) (Math.random() * 8) + 1;
+        for (int i = 0; i < digits - 1; i++) {
             accountNumber += (int) (Math.random() * 9);
         }
         return accountNumber;
@@ -214,9 +201,8 @@ public class Generator {
         newClient.setFirstNameString(generateFirstName());
         newClient.setLastNameString(generateLastName());
         String email = generateEmail(newClient.getFirstNameString(), newClient.getLastNameString());
-        String phoneNumber = generate9DigitNumber();
         newClient.setEmailAddress(email);
-        newClient.setPhoneNumber(phoneNumber);
+        newClient.setPhoneNumber(generateNumber(9));
 
         return newClient;
     }
@@ -224,8 +210,8 @@ public class Generator {
     //corporate Client
     public CorporateClient generateCorporateClient() {
         CorporateClient newCorporateClient = new CorporateClient();
-        newCorporateClient.setBankAccountNumber(generateBankAccountNumber());
-        newCorporateClient.setREGON(generate9DigitNumber());
+        newCorporateClient.setBankAccountNumber(generateNumber(28));
+        newCorporateClient.setREGON(generateNumber(9));
 
         return newCorporateClient;
     }

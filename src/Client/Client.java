@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * Created by Jakub on 04.12.2016.
  */
-public abstract class Client implements Serializable {
+public abstract class Client implements Serializable, Runnable {
     protected Address address;
     protected Map map = Map.getInstance();
     private Position position;
@@ -17,4 +17,6 @@ public abstract class Client implements Serializable {
     public String toString() {
         return "Klient";
     }
+
+    public abstract String getClientType();
 }

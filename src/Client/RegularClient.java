@@ -39,4 +39,14 @@ public class RegularClient extends IndividualClient implements Localizable {
     public void AddMapDescription() {
 
     }
+
+    @Override
+    public String getClientType() {
+        return "Klient regularny";
+    }
+
+    @Override
+    public void run() {
+        ;
+    }
 }

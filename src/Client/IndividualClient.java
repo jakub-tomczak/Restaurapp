@@ -6,8 +6,6 @@ import javafx.beans.property.SimpleStringProperty;
  * Created by Jakub on 04.12.2016.
  */
 public abstract class IndividualClient extends Client {
-    private String firstName;
-    private String lastName;
     private String emailAddress;
     private String phoneNumber;
     private int discountAmount;
@@ -25,8 +23,6 @@ public abstract class IndividualClient extends Client {
 
     public IndividualClient(String firstName, String lastName) {
         this();
-//          this.firstName = firstName;
-//          this.lastName = lastName;
         this.firstNameString.set(firstName);
         this.lastNameString.set(lastName);
     }
@@ -47,7 +43,7 @@ public abstract class IndividualClient extends Client {
 
     @Override
     public String toString() {
-        return firstName + " " + lastName;
+        return firstNameString.toString() + " " + lastNameString.toString();
     }
 
     public String getFirstNameString() {

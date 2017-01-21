@@ -59,4 +59,30 @@ public class CorporateClient extends Client implements Localizable {
     public void setREGON(String REGON) {
         this.REGON = REGON;
     }
+
+    public String getCorporationName() {
+        return corporationName;
+    }
+
+    public void setCorporationName(String corporationName) {
+        this.corporationName = corporationName;
+    }
+
+    public Address getLetterAddress() {
+        return letterAddress;
+    }
+
+    public void setLetterAddress(Address letterAddress) {
+        this.letterAddress = letterAddress;
+    }
+
+    @Override
+    public String getClientType() {
+        return "Klient korporacyjny";
+    }
+
+    @Override
+    public void run() {
+        ;
+    }
 }

@@ -32,7 +32,7 @@ public class Restaurant extends Application {
     public void start(Stage primaryStage) throws Exception {
         RestaurantController controller = new RestaurantController();
         PotentialClient newCl = new PotentialClient("Andrzej", "Kowalski");
-        IndividualClient newClient = new PotentialClient();
+        IndividualClient newClient;
         newClient = Generator.getInstance().generateClient();
         if (newClient instanceof PotentialClient) {
             System.out.println("potential client");

@@ -32,4 +32,21 @@ public class PotentialClient extends IndividualClient implements Localizable {
     public void AddMapDescription() {
 
     }
+
+    @Override
+    public String getClientType() {
+        return "Potencjalny klient";
+    }
+
+    @Override
+    public void run() {
+//        while (true) {
+//            System.out.println("Potential client wykonuje prace");
+//            try {
+//                Thread.sleep(5000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+    }
 }

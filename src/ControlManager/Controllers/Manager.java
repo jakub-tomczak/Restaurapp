@@ -1,4 +1,4 @@
-package ControlManager;
+package ControlManager.Controllers;
 
 import Client.Client;
 
