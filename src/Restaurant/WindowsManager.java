@@ -1,7 +1,5 @@
 package Restaurant;
 
-import Generator.Generator;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,29 +12,25 @@ import java.util.HashMap;
  * Created by Jakub on 19.01.2017.
  */
 public class WindowsManager {
+    private static WindowsManager instance = null;
     private HashMap<RestaurantController.availableViews, ViewsDescription> viewsMap = new HashMap<RestaurantController.availableViews, ViewsDescription>(10) {{
         put(RestaurantController.availableViews.Restaurant, new ViewsDescription("Restauracja", "../Restaurant/RestaurantView.fxml"));
         put(RestaurantController.availableViews.ClientsManager, new ViewsDescription("Zarządzaj klientami", "../ControlManager/Views/ClientManagerView.fxml"));
         put(RestaurantController.availableViews.DeliveryManManager, new ViewsDescription("Zarządzaj dostawcami", "../ControlManager/Views/DeliveryMenManagerView.fxml"));
         put(RestaurantController.availableViews.OrdersManager, new ViewsDescription("Zarządzaj posiłkami", "../ControlManager/Views/OrderManager.fxml"));
+        put(RestaurantController.availableViews.OrdersManager, new ViewsDescription("Dodaj klienta indywidualnego", "../ControlManager/Views/IndividualClientController.fxml"));
+        put(RestaurantController.availableViews.OrdersManager, new ViewsDescription("Dodaj klienta korporacyjnego", "../ControlManager/Views/OrderManager.fxml"));
+
     }};
 
-    public void closeApplication(ActionEvent actionEvent) {
-        System.out.println("koniec aplikacji");
+    private WindowsManager() {
     }
 
-    public void generuj(ActionEvent event) {
-        Generator generator = Generator.getInstance();
-        System.out.println(generator.generateName());
-    }
-
-    public void openClientManager(ActionEvent event) {
-        openWindow(RestaurantController.availableViews.ClientsManager);
-    }
-
-    public void openOrdersManager(ActionEvent event) {
-        //openWindow(availableViews.OrdersManager);
-        openWindownVerbose(RestaurantController.availableViews.ClientsManager);
+    public static WindowsManager getInstance() {
+        if (instance == null) {
+            instance = new WindowsManager();
+        }
+        return instance;
     }
 
     public void openWindownVerbose(RestaurantController.availableViews newView) {
@@ -121,6 +115,8 @@ public class WindowsManager {
         OrdersManager,
         ClientsManager,
         DeliveryManManager,
+        IndividualClientController,
+        CorporateClientController,
         None
     }
 
