@@ -1,7 +1,6 @@
 package ControlManager.Controllers;
 
 import Client.Client;
-import Client.IndividualClient;
 import Client.PotentialClient;
 import Client.RegularClient;
 import Restaurant.MessagesHandler;
@@ -14,17 +13,12 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by Jakub on 10.01.2017.
  */
 
 public class ClientManager {
 
-    public static List<IndividualClient> clientsList = new ArrayList<IndividualClient>();
-    private static ClientManager Instance = null;
     ObservableList<Client> currentClients = FXCollections.observableArrayList(
             new RegularClient("Jan", "Kowalski"),
             new PotentialClient("Anna", "Jankowska")
@@ -37,19 +31,12 @@ public class ClientManager {
     private TextField lastName;
 
     public ClientManager() {
-        Instance = this;
 
         // clientsTable.setEditable(true);
 
 
     }
 
-    public static ClientManager getInstance() {
-        if (Instance == null) {
-            Instance = new ClientManager();
-        }
-        return Instance;
-    }
 
     @FXML
     private void initialize() {
@@ -65,34 +52,31 @@ public class ClientManager {
                 new PropertyValueFactory<Client, String>("firstNameString")
         );
 
+        TableColumn secondNameTableColumn = new TableColumn("Nazwisko");
+        secondNameTableColumn.setMinWidth(100);
+        secondNameTableColumn.setCellValueFactory(
+                new PropertyValueFactory<Client, String>("lastNameString")
+        );
+
 
         clientsTable.setItems(currentClients);
-        clientsTable.getColumns().addAll(firstNameTableColumn);
+        clientsTable.getColumns().addAll(firstNameTableColumn, secondNameTableColumn);
 
         MessagesHandler.showMessage("Dodano osoby do listy");
 
     }
 
+
     @FXML
     private void addClient(ActionEvent event) {
-       /* clientsList.add(
-                new RegularClient(firstName.getText(), lastName.getText())
-        );
-        */
-        clientsList.add(
-                new RegularClient("Jan", "Kowalski")
-        );
+
+
         System.out.println("Dodano klienta");
     }
 
-    public void listClients(ActionEvent event) {
-        if (clientsList.size() > 0) {
-            for (Client a : clientsList) {
-                System.out.println(a.toString());
-            }
 
-        }
+    private void createRandomClient() {
+        ;
     }
-
 
 }

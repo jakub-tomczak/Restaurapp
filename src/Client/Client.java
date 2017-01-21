@@ -1,6 +1,7 @@
 package Client;
 
 import Map.Map;
+import Map.Position;
 
 import java.io.Serializable;
 
@@ -10,6 +11,7 @@ import java.io.Serializable;
 public abstract class Client implements Serializable {
     protected Address address;
     protected Map map = Map.getInstance();
+    private Position position;
 
     @Override
     public String toString() {

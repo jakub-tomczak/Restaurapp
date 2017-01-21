@@ -1,6 +1,7 @@
 package DeliveryMan;
 
 import Map.Localizable;
+import Map.Position;
 
 import java.util.List;
 
@@ -14,9 +15,13 @@ public class DeliveryMan implements Runnable, Localizable {
     private boolean isCurrentlyAvailable;
     private Vehicle.DriversLicenseCategory driversLicenseCategory;
     private Vehicle currentVehicleInUse;
+    private Position position;
+
 
     public DeliveryMan() {
         driversLicenseCategory = Vehicle.DriversLicenseCategory.none;
+        currentVehicleInUse = null;
+
     }
 
     public void EmergencyReturnToRestaurant() {
@@ -71,7 +76,6 @@ public class DeliveryMan implements Runnable, Localizable {
         isCurrentlyAvailable = currentlyAvailable;
     }
 
-
     @Override
     public void run() {
 
@@ -85,5 +89,13 @@ public class DeliveryMan implements Runnable, Localizable {
     @Override
     public void AddMapDescription() {
 
+    }
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
     }
 }

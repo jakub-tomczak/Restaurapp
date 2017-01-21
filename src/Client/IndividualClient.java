@@ -6,27 +6,29 @@ import javafx.beans.property.SimpleStringProperty;
  * Created by Jakub on 04.12.2016.
  */
 public abstract class IndividualClient extends Client {
-    protected String firstName;
-    protected String lastName;
-    protected String emailAddress;
-    protected String phoneNumber;
+    private String firstName;
+    private String lastName;
+    private String emailAddress;
+    private String phoneNumber;
+    private int discountAmount;
 
-    private SimpleStringProperty firstNameString;
-    private SimpleStringProperty lastNameString;
+    private SimpleStringProperty firstNameString = new SimpleStringProperty("");
+    private SimpleStringProperty lastNameString = new SimpleStringProperty("");
 
 
     public IndividualClient() {
         this.emailAddress = null;
         this.phoneNumber = null;
+        this.discountAmount = 0;
 
     }
 
     public IndividualClient(String firstName, String lastName) {
         this();
-        //  this.firstName = firstName;
-        //  this.lastName = lastName;
-        this.firstNameString = new SimpleStringProperty(firstName);
-        this.lastNameString = new SimpleStringProperty(lastName);
+//          this.firstName = firstName;
+//          this.lastName = lastName;
+        this.firstNameString.set(firstName);
+        this.lastNameString.set(lastName);
     }
 
     public IndividualClient(String firstName, String lastName, String emailAddress, String phoneNumber) {
@@ -71,4 +73,22 @@ public abstract class IndividualClient extends Client {
     public SimpleStringProperty lastNameStringProperty() {
         return lastNameString;
     }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+
 }

@@ -5,14 +5,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.*?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.112-ea"
             fx:controller="ControlManager.Controllers.ClientManager">
     <children>
 
         <VBox layoutY="200.0" prefHeight="166.0" prefWidth="600.0">
             <children>
                 <Label fx:id="addClientLabel" text="Dodaj klienta"/>
-                <HBox alignment="CENTER" prefHeight="92.0" prefWidth="600.0">
+                <HBox alignment="CENTER" onMouseClicked="#addClient" prefHeight="92.0" prefWidth="600.0">
                     <children>
                         <Button fx:id="addIndividualClientButton" alignment="CENTER" mnemonicParsing="false"
                                 onAction="#addClient" text="Klient indywidualny">

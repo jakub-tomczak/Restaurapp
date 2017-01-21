@@ -1,5 +1,9 @@
 package Restaurant;
 
+import Client.CorporateClient;
+import Client.IndividualClient;
+import Client.PotentialClient;
+import Generator.Generator;
 import Map.Map;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -27,6 +31,15 @@ public class Restaurant extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         RestaurantController controller = new RestaurantController();
+        PotentialClient newCl = new PotentialClient("Andrzej", "Kowalski");
+        IndividualClient newClient = new PotentialClient();
+        newClient = Generator.getInstance().generateClient();
+        if (newClient instanceof PotentialClient) {
+            System.out.println("potential client");
+        } else {
+            System.out.println("regular client");
+        }
+        CorporateClient newCorporateCLient = Generator.getInstance().generateCorporateClient();
 
 
         Parent root = null;
@@ -41,6 +54,7 @@ public class Restaurant extends Application {
         //  primaryStage.setFullScreen(true);
         primaryStage.setFullScreenExitHint("Wciśnij ESC, aby wyjść z trybu pełnoekranowego.");
         primaryStage.show();
+
 
     }
 }

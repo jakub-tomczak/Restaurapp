@@ -11,6 +11,10 @@ public class PotentialClient extends IndividualClient implements Localizable {
         super(firstName, lastName);
     }
 
+    public PotentialClient() {
+        super();
+    }
+
     public boolean ProposeLoyaltyCard() {
         return false;
     }
